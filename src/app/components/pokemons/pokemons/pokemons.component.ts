@@ -18,4 +18,9 @@ export class PokemonsComponent {
       res => this.pokemon = res
     );
   }
+
+  formatNames(){
+
+    this.pokemon.name
+  }
 }
