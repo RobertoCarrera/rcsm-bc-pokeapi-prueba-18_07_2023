@@ -18,18 +18,16 @@ export class PokemonsAPIService {
     return this.http.get(this.apiURL);
   }
 
-  getPokemonsFiltered(): Observable<Pokemon[]>{
+  getPokemonsFiltered(): Observable<Pokemon>{
 
-    return this.http.get<Pokemon[]>(this.apiURL).pipe(
+    return this.http.get<Pokemon>(this.apiURL).pipe(
       map(response =>{
-        return response.map(response=>{
-          return{
-            id: response.id, 
-            name: response.name,
-            front_default: response.front_default
-          }
+        return{
+          id: response.id, 
+          name: response.name,
+          front_default: response.front_default
+        }
         })
-      })
     );
   }
 }
