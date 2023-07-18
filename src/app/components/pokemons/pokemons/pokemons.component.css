@@ -1,0 +1,65 @@
+.pokemons_container{
+    
+    background-color: #ff4753;
+
+    margin: 0 auto;
+
+    width: 40vw;
+    height: 80vh;
+
+    border-top-left-radius: 20%;
+    border-top-right-radius: 5%;
+    
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+    font-size: 2em;
+}
+
+.nombre_numero{
+
+    min-width: 20vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pantalla{
+
+    background-color: skyblue;
+
+    min-width: 20vw;
+    min-height: 40vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pantalla img{
+
+    min-width: 8em;
+}
+
+.tipos{
+
+    min-width: 20vw;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.mas_info{
+
+    min-width: 20vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
