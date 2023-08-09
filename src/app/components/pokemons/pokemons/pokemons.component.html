@@ -1,13 +1,13 @@
 <div class="container mt-5 pokemons_container">
     <div class="row">
         <div class="col nombre_numero">
-            <h2>{{pokemon.name}}</h2>
-            <h2>{{pokemon.id}}</h2>
+            <h2 *ngIf="pokemon" >#{{pokemon.id}}</h2>
+            <h2 *ngIf="pokemon" >{{pokemon.name}}</h2>
         </div>
     </div>
     <div class="row">
         <div class="col pantalla">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt=""/>
+            <img  *ngIf="pokemon" [src]="pokemon.sprites.front_default" alt=""/>
         </div>
     </div>
     <div class="row tipos_row">
@@ -17,14 +17,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col habilidades">
-            <h2>Habilidades</h2>
+        <div *ngFor= "let habilidad of pokemon.abilities" class="col habilidad">
+            <h2>{{habilidad}}</h2>
         </div>
     </div>
     <div class="row">
         <div class="col mas_info">
-            <h2>Peso</h2>
-            <h2>Altura</h2>
+            <h2>{{pokemon.weight}}</h2>
+            <h2>{{pokemon.height}}</h2>
         </div>
     </div>
 </div>

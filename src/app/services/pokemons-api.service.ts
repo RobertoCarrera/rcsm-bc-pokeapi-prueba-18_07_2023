@@ -10,8 +10,12 @@ export class PokemonsAPIService {
 
   apiURL = "https://pokeapi.co/api/v2/pokemon/1";
   pokemons = [];
+  totalPokemons;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+
+    this.totalPokemons = this.getCount();
+  }
 
   getPokemons(){
 
@@ -24,10 +28,20 @@ export class PokemonsAPIService {
       map(response =>{
         return{
           id: response.id, 
-          name: response.name,
-          front_default: response.front_default
+          name: response.name.charAt(0).toUpperCase()+response.name.slice(1),
+          sprites: response.sprites,
+          abilities: response.abilities,
+          weight: response.weight,
+          height: response.height
         }
-        })
+      })
+    );
+  }
+
+  getCount() {
+    return this.http.get(this.apiURL).pipe(
+
+      map((response: any) => response.count)
     );
   }
 }
